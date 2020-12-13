@@ -18,7 +18,7 @@ return (
 
       <Route path='/trades/stats' component={Stats}/>
       </Switch>
-      {console.log("In Home ", props)}
+      {console.log("In Home ", props.totalTrades)}
     </div>
     )}
 

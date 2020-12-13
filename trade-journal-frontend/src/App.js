@@ -14,7 +14,7 @@ class App extends React.Component {
 render() {
   return (
     <div>
-      <Home trades={this.props.trades}/>
+      <Home trades={this.props.trades} totalTrades={this.props.totalTrades} />
     
     </div>
   );
@@ -32,7 +32,8 @@ render() {
 }
 
 const mapStateToProps = state => {
-  return {trades: state.trades}
+  return {trades: state.trades,
+          totalTrades: state.totalTrades}
 }
 
 export default connect(mapStateToProps, { fetchTrades }) (App);
