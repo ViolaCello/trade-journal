@@ -15,6 +15,7 @@ render() {
   return (
     <div>
       <Home trades={this.props.trades}/>
+    
     </div>
   );
 }
@@ -36,4 +37,4 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, { fetchTrades }) (App);
 
-// {this.props.trades.map(trade => <span key={trade.id}> {trade.ticker} - {trade.strategy}</span>)}
+//   {this.props.trades.map(trade => <span key={trade.id}> {trade.ticker} - {trade.strategy}</span>)}
