@@ -1,3 +1,13 @@
 export default function tradesReducer(state = { trades: []}, action) {
-    return state
+    switch(action.type){
+
+        case "GET_TRADES":
+            return {
+                ...state,
+                trades: [...state.trades]
+            }
+
+    default:
+      return state;
+    }
 }

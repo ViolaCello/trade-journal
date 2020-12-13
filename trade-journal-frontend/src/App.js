@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react'
+import fetchTrades from './actions/fetchTrades'
+import { connect } from 'react-redux'
 
 
 
@@ -29,11 +31,12 @@ render() {
   );
 }
   componentDidMount() {
-    fetch('http://localhost:3001/trades')
-    .then(response => response.json())
-    .then(astronauts => console.log(astronauts));
+   this.props.fetchTrades()
+    // fetch('http://localhost:3001/trades')
+    // .then(response => response.json())
+    // .then(astronauts => console.log(astronauts));
   };
 
 
 }
-export default App;
+export default connect(null, { fetchTrades }) (App);
