@@ -6,13 +6,13 @@ import App from './App';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-// remember to import the reducer from the reducer folder
+import tradesReducer from './reducers/tradesReducer'
 
 
 // import reportWebVitals from './reportWebVitals';
 let reducer = () => console.log("Hello World")
 const store = createStore(
-  reducer, compose(applyMiddleware(thunk),
+  tradesReducer, compose(applyMiddleware(thunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 );
 
