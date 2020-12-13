@@ -3,6 +3,7 @@
 import React from 'react'
 import fetchTrades from './actions/fetchTrades'
 import { connect } from 'react-redux'
+import Home from './components/Home'
 
 
 
@@ -13,9 +14,7 @@ class App extends React.Component {
 render() {
   return (
     <div>
-      
-        {this.props.trades.map(trade => <span key={trade.id}> {trade.ticker} - {trade.strategy}</span>)}
-        
+      <Home trades={this.props.trades}/>
     </div>
   );
 }
@@ -36,3 +35,5 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { fetchTrades }) (App);
+
+// {this.props.trades.map(trade => <span key={trade.id}> {trade.ticker} - {trade.strategy}</span>)}

@@ -8,6 +8,11 @@ body {
   background-color: #282c34;
   color: #7eabcf;;
   text-align: center;
+  
+}
+
+:link {
+  color: aquamarine;
 }
 
 code {

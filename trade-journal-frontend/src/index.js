@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import tradesReducer from './reducers/tradesReducer'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 // import reportWebVitals from './reportWebVitals';
@@ -19,7 +20,9 @@ const store = createStore(
 ReactDOM.render(
 
   <Provider store={store}>
+  <Router>
   <App />
+  </Router>
 </Provider>
 ,
   document.getElementById('root')
