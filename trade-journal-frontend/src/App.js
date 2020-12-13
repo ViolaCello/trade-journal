@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
 import React from 'react'
 import fetchTrades from './actions/fetchTrades'
 import { connect } from 'react-redux'
@@ -12,22 +12,10 @@ class App extends React.Component {
 
 render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-     </p>
-        {this.props.trades.map(trade => <span>{trade.ticker} - {trade.strategy}</span>)}
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
+        {this.props.trades.map(trade => <span key={trade.id}> {trade.ticker} - {trade.strategy}</span>)}
+        
     </div>
   );
 }
