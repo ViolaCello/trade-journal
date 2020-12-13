@@ -32,11 +32,18 @@ render() {
 }
   componentDidMount() {
    this.props.fetchTrades()
+   console.log(this.props.trades)
     // fetch('http://localhost:3001/trades')
     // .then(response => response.json())
     // .then(astronauts => console.log(astronauts));
   };
-
+  
+ 
 
 }
-export default connect(null, { fetchTrades }) (App);
+
+const mapStateToProps = state => {
+  return {trades: state.trades}
+}
+
+export default connect(mapStateToProps, { fetchTrades }) (App);
