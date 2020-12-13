@@ -17,7 +17,8 @@ render() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
-        </p>
+     </p>
+        {this.props.trades.map(trade => <span>{trade.ticker} - {trade.strategy}</span>)}
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -32,7 +33,7 @@ render() {
 }
   componentDidMount() {
    this.props.fetchTrades()
-   console.log(this.props.trades)
+   console.log("In App: ", this.props.trades)
     // fetch('http://localhost:3001/trades')
     // .then(response => response.json())
     // .then(astronauts => console.log(astronauts));
