@@ -15,7 +15,7 @@ return (
       <Switch>
       <Route path='/trades/new' component={TradeInput}/>
 
-      <Route path='/trades' component={Trades} />
+      <Route exact path='/trades' component={Trades} />
 
       <Route path='/trades/stats' component={Stats}/>
       <h3>You're current total profit is: ${props.totalProfit}</h3>
