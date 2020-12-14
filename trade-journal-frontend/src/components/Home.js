@@ -10,6 +10,7 @@ const Home = props => {
    
 return (
     <div>
+     
     <Navbar/>
       <Switch>
       <Route path='/trades/new' component={TradeInput}/>
@@ -17,8 +18,8 @@ return (
       <Route path='/trades' component={Trades} />
 
       <Route path='/trades/stats' component={Stats}/>
+      <h3>You're current total profit is: ${props.totalProfit}</h3>
       </Switch>
-      {console.log("In Home ", props.totalTrades)}
     </div>
     )}
 
