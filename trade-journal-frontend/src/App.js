@@ -21,7 +21,7 @@ render() {
 }
   componentDidMount() {
    this.props.fetchTrades()
-   console.log("In App: ", this.props.trades)
+   console.log("In App: ", this.props.trades, "Uniqu:", this.props.uniqStrategies)
     // fetch('http://localhost:3001/trades')
     // .then(response => response.json())
     // .then(astronauts => console.log(astronauts));
@@ -34,7 +34,8 @@ render() {
 const mapStateToProps = state => {
   return {trades: state.trades,
           totalTrades: state.totalTrades,
-          totalProfit: state.totalProfit
+          totalProfit: state.totalProfit,
+          uniqStrategies: state.uniqStrategies
         }
 }
 
