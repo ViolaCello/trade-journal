@@ -38,3 +38,8 @@ ul {
 li {
   list-style-type: none;
 }
+
+input, textarea, option {
+  background-color: rgb(8, 37, 28);
+  color: aquamarine;  
+}

@@ -36,8 +36,6 @@ handleChange = (event) => {
     })
   }
 
-  newStrategyInput = ""
-
     render(props) {
         return (
             <div>
@@ -70,7 +68,7 @@ handleChange = (event) => {
                 <input type="number" name="profit" value={this.state.profit} onChange={this.handleChange}/><br /><br />
 
                 <label>Notes: </label><br />
-                <input type="textarea" name="notes" value={this.state.notes} onChange={this.handleChange}/><br /><br />
+                <textarea name="notes" value={this.state.notes} onChange={this.handleChange}/><br /><br />
 
                 </form>
             </div>
