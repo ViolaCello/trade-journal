@@ -7,10 +7,12 @@ class InputForm extends Component {
 state = {
     ticker:'',
     strategy:'',
+    newStrategy:'',
     date:'',
     profit:0,
     risk:0,
     notes:''
+    
 }
 
 
@@ -29,10 +31,12 @@ handleChange = (event) => {
         date:'',
         profit:0,
         risk:0,
-        notes:''
+        notes:'',
+        newStrategy:''
     })
   }
 
+  newStrategyInput = ""
 
     render(props) {
         return (
@@ -50,12 +54,23 @@ handleChange = (event) => {
 
                 <label>Strategy: </label><br />
                 <select name="strategy" value={this.state.strategy} onChange={this.handleChange}>
+                <option>--New Strategy--</option>
                 {this.props.uniqStrategies.map(strat => <option>{strat}</option>)}
-               
-                </select><br /><br />
+                 </select><br /><br />
+                {(this.state.strategy==="--New Strategy--") ? 
+                        <span>
+                    <label>Enter New Strategy Name: </label>
+                    <input type="text" name="newStrategy" value={this.state.newStrategy} onChange={this.handleChange} /><br /><br />
+                    </span>
+                : null }
+                <label>Risk: </label><br />
+                <input type="number" name="risk" value={this.state.risk} onChange={this.handleChange}/><br /><br />
 
-                <label>Ticker Symbol: </label><br />
-                <input type="text" name="ticker" value={this.state.ticker} onChange={this.handleChange}/>
+                <label>Profit/Loss </label><br />
+                <input type="number" name="profit" value={this.state.profit} onChange={this.handleChange}/><br /><br />
+
+                <label>Notes: </label><br />
+                <input type="textarea" name="notes" value={this.state.notes} onChange={this.handleChange}/><br /><br />
 
                 </form>
             </div>
