@@ -11,9 +11,10 @@ render () {
     return (
     <div>
     <h1 style={{padding: '10px'}}>Trades Page</h1>
-  
-    {this.props.trades.map(trade => <span key={trade.id}> {trade.ticker} - {trade.strategy}</span>)}
+  <ul>
+    {this.props.trades.map(trade => <li key={trade.id}> {trade.ticker} - {trade.strategy}</li>)}
    {console.log("Props: ", this.props.totalTrades)}
+   </ul>
     </div>
     )
 }
