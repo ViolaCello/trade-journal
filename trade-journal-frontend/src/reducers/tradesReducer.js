@@ -22,6 +22,10 @@ export default function tradesReducer(state = {
                 uniqStrategies: [...new Set(strategyArray)]
              }
 
+             case 'ADD_TRADE_SUCCESS':
+               console.log("In the ADD_TRADE_SUCCESS", action.payload)
+              return {...state, trades: [...state.trades, action.payload]}
+
     default:
       return state;
     }

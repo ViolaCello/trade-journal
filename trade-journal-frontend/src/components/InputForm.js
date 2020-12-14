@@ -34,6 +34,7 @@ handleChange = (event) => {
         notes:'',
         newStrategy:''
     })
+    this.props.history.push("/trades");
   }
 
     render(props) {
