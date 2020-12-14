@@ -25,12 +25,6 @@ handleChange = (event) => {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    if (this.state.strategy==="--New Strategy--") {
-        this.setState((state) => {
-           return {strategy: this.state.newStrategy}
-        })
-    }
-    console.log("We are in the handleSubmit", this.state)
     this.props.addTrade(this.state)
     this.setState({
         ticker:'',
@@ -52,28 +46,28 @@ handleChange = (event) => {
                 <form onSubmit={this.handleSubmit}>
 
                 <label>Ticker Symbol: </label><br />
-                <input type="text" name="ticker" value={this.state.ticker} onChange={this.handleChange}/><br /><br />
+                <input type="text" name="ticker" value={this.state.ticker} onChange={this.handleChange} required/><br /><br />
 
 
                 <label>Date of Trade: </label><br />
-                <input type="date" name="date" value={this.state.date} onChange={this.handleChange}/><br /><br />
+                <input type="date" name="date" value={this.state.date} onChange={this.handleChange} required/><br /><br />
 
                 <label>Strategy: </label><br />
-                <select name="strategy" value={this.state.strategy} onChange={this.handleChange}>
+                <select required name="strategy" value={this.state.strategy} onChange={this.handleChange} >
                 <option>--New Strategy--</option>
                 {this.props.uniqStrategies.map(strat => <option>{strat}</option>)}
                  </select><br /><br />
                 {(this.state.strategy==="--New Strategy--") ? 
                         <span>
                     <label>Enter New Strategy Name: </label>
-                    <input type="text" name="newStrategy" value={this.state.newStrategy} onChange={this.handleChange} /><br /><br />
+                    <input type="text" name="newStrategy" value={this.state.newStrategy} onChange={this.handleChange} required/><br /><br />
                     </span>
                 : null }
                 <label>Risk: </label><br />
-                <input type="number" name="risk" value={this.state.risk} onChange={this.handleChange}/><br /><br />
+                <input type="number" name="risk" value={this.state.risk} onChange={this.handleChange} /><br /><br />
 
                 <label>Profit/Loss </label><br />
-                <input type="number" name="profit" value={this.state.profit} onChange={this.handleChange}/><br /><br />
+                <input type="number" name="profit" value={this.state.profit} onChange={this.handleChange} /><br /><br />
 
                 <label>Notes: </label><br />
                 <textarea name="notes" value={this.state.notes} onChange={this.handleChange}/><br /><br />

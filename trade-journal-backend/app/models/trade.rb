@@ -1,4 +1,7 @@
 class Trade < ApplicationRecord
+    validates :ticker, presence: true
+    validates :date, presence: true
+    validates :strategy, presence: true
 
 
     def process_trade

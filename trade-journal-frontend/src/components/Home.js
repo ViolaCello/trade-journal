@@ -13,6 +13,8 @@ return (
      
     <Navbar/>
       <Switch>
+    
+
       <Route path='/trades/new' component={TradeInput}/>
 
       <Route exact path='/trades' component={Trades} />
