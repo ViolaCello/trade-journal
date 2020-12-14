@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addTrade } from '../actions/addTrade'
+import { withRouter } from 'react-router-dom'
 
 class InputForm extends Component {
 
@@ -24,6 +25,12 @@ handleChange = (event) => {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    if (this.state.strategy==="--New Strategy--") {
+        this.setState((state) => {
+           return {strategy: this.state.newStrategy}
+        })
+    }
+    console.log("We are in the handleSubmit", this.state)
     this.props.addTrade(this.state)
     this.setState({
         ticker:'',
@@ -40,7 +47,7 @@ handleChange = (event) => {
     render(props) {
         return (
             <div>
-            {console.log("InputForm: ", this.props.uniqStrategies, this.state)}
+            {console.log("InputForm: ", this.props)}
                 <h1> Input Form</h1>
                 <form onSubmit={this.handleSubmit}>
 
@@ -71,6 +78,8 @@ handleChange = (event) => {
                 <label>Notes: </label><br />
                 <textarea name="notes" value={this.state.notes} onChange={this.handleChange}/><br /><br />
 
+                <input type="submit" value="Add Trade" />
+
                 </form>
             </div>
             )
@@ -80,4 +89,4 @@ handleChange = (event) => {
 
 }
 
-export default connect(null, { addTrade })(InputForm);
+export default withRouter(connect(null, { addTrade })(InputForm));

@@ -1,4 +1,9 @@
 export const addTrade = (data) => {
+    console.log("AddTrade", data)
+    if (!!data.newStrategy) {
+        data.strategy = data.newStrategy
+    }
+    console.log("AFTER AddTrade", data)
     return (dispatch) => {
       fetch(`http://localhost:3001/trades`, {
         method: "POST",
