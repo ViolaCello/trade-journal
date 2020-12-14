@@ -37,9 +37,14 @@ handleChange = (event) => {
     render() {
         return (
             <div>
-               <h1> Input Form</h1>
+            {console.log("InputForm: ", this.state)}
+                <h1> Input Form</h1>
+                <form onSubmit={this.handleSubmit}>
 
+                <label>Ticker Symbol: </label>
+                <input type="text" name="ticker" value={this.state.ticker} onChange={this.handleChange}/>
 
+                </form>
             </div>
             )
         
