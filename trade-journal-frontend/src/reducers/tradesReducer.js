@@ -13,7 +13,14 @@ export default function tradesReducer(state = {
             action.payload.map(array => profitsArray.push(array.profit))
             const reducer = (accumulator, currentValue) => accumulator + currentValue;
             // console.log("reducer: ", profitsArray.reduce(reducer))
-            return {...state, trades: action.payload, totalTrades: action.payload.length, totalProfit: profitsArray.reduce(reducer).toFixed(2) }
+            let strategyArray = []
+            action.payload.map(array => strategyArray.push(array.strategy))
+            // let uniqStrategies = [...new Set(strategyArray)]
+            return {...state, trades: action.payload,
+               totalTrades: action.payload.length,
+                totalProfit: profitsArray.reduce(reducer).toFixed(2),
+                uniqStrategies: [...new Set(strategyArray)]
+             }
 
     default:
       return state;
