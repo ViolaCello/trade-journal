@@ -18,8 +18,9 @@ return (
       <Route exact path='/trades' component={Trades} />
 
       <Route path='/trades/stats' component={Stats}/>
-      <h3>You're current total profit is: ${props.totalProfit}</h3>
+   
       </Switch>
+      <h3>You're current total profit is: ${props.totalProfit}</h3>
     </div>
     )}
 
