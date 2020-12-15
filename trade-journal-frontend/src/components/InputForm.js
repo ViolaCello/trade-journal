@@ -7,15 +7,16 @@ import { withRouter } from 'react-router-dom'
 
 class InputForm extends Component {
 
+
+
 state = {
     ticker:'',
     strategy:'',
     newStrategy:'',
     date:'',
     profit:0,
-    risk:0,
+    risk: 0,
     notes:''
-    
 }
 
 
@@ -28,21 +29,15 @@ handleChange = (event) => {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.addTrade(this.state, this.props.history)
-    this.setState({
-        ticker:'',
-        strategy:'',
-        date:'',
-        profit:0,
-        risk:0,
-        notes:'',
-        newStrategy:''
-    })
-   //  this.props.history.push("/trades");
+    // no need to set the state back to blank because if there are errors I want to not have to re-fill the entire page again
+   //  this.props.history.push("/trades");  --> the redirect will happen in the addTrade function and trigger only if the database sends no errors
     
 
   }
 
     render(props) {
+        console.log(this.props)
+debugger
         return (
             <div>
             {console.log("InputForm: ", this.props)}

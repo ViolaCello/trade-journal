@@ -43,3 +43,8 @@ input, textarea {
   background-color: rgb(8, 37, 28);
   color: aquamarine;  
 }
+
+p {
+  font-family: "Monaco", monospace;
+  font-size: large;
+}
