@@ -4,6 +4,7 @@ import { addTrade } from '../actions/addTrade'
 import { withRouter } from 'react-router-dom'
 
 
+
 class InputForm extends Component {
 
 state = {

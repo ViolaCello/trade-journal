@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import InputForm from './InputForm'
+import { uniqStrategies } from './Utilities'
 
 
 class TradeInput extends Component {
@@ -9,16 +10,16 @@ render ()  {
     return (
         <div>
         <h2>TradeInput Page</h2>
-        You currently have these {this.props.uniqStrategies.length} trade strategies:
-         {this.props.uniqStrategies.map(strats => <li> {strats}</li>)}
-         <InputForm uniqStrategies={this.props.uniqStrategies}/>
+        You currently have these {uniqStrategies(this.props.trades).length} trade strategies:
+         {uniqStrategies(this.props.trades).map(strats => <li> {strats}</li>)}
+         <InputForm uniqStrategies={uniqStrategies(this.props.trades)}/>
         </div>
     )}
     }
 
     const mapStateToProps = state => {
         return  {
-            uniqStrategies : state.uniqStrategies
+            trades : state.trades
          }
         
     }

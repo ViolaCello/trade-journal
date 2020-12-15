@@ -19,7 +19,8 @@
         } else {
         let strategyArray = []
         data.map(array => strategyArray.push(array.strategy))
-        return new Set(strategyArray)
+             let answer = [...new Set(strategyArray)]
+        return answer
         }
     }
 
