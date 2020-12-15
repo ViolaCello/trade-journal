@@ -20,6 +20,9 @@ const Show = (props) => {
    <p>Return on Risk: {trade.ror}</p>
    <p>Notes: {trade.notes}</p>  
 
+        <button className="delete">Delete</button>
+        <button>Edit</button>
+
     </div> 
     )
 }

@@ -31,14 +31,14 @@ return (
     )}
 
 
-const MapStateToProps = state => {
-  return {
-    trades : state.trades
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     trades : state.trades
+//   }
+// }
 
 
   export default Home
-// export default connect(MapStateToProps)(Home)
+// export default connect(mapStateToProps)(Home)
 
 //{props.trades.map(trade => <span key={trade.id}> {trade.ticker} - {trade.strategy}</span>)}

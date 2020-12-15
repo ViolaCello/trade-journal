@@ -28,7 +28,7 @@ render () {
 
 }
 
-const MapStateToProps = state => {
+const mapStateToProps = state => {
     return {
         trades: state.trades,
       totalTrades: state.totalTrades
@@ -37,6 +37,6 @@ const MapStateToProps = state => {
 
 
 
-export default connect(MapStateToProps)(Trades)
+export default connect(mapStateToProps)(Trades)
 
 //  {props.map.trades(trade => <span key={trade.id}> {trade.ticker} - {trade.strategy}</span>)}
