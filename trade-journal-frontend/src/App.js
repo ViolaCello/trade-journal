@@ -4,6 +4,7 @@ import React from 'react'
 import fetchTrades from './actions/fetchTrades'
 import { connect } from 'react-redux'
 import Home from './components/Home'
+import { sumProfits } from './components/Utilities'
 
 
 
@@ -11,17 +12,32 @@ import Home from './components/Home'
 
 class App extends React.Component {
 
+
+  componentDidMount() {
+    const getTrades =  async() => {
+     await this.props.fetchTrades()
+    }
+    getTrades()
+  }
+ 
+
 render() {
+
+  console.log("In App, Sum Profits:", sumProfits(this.props.trades))
+  console.log("In App, Props :", this.props.trades)
+
   return (
     <div>
-      <Home trades={this.props.trades} totalTrades={this.props.totalTrades} totalProfit={this.props.totalProfit} />
-    
+      <Home trades={this.props.trades} totalTrades={this.props.totalTrades} totalProfit={sumProfits(this.props.trades)} />
+     
     </div>
   );
 }
-  componentDidMount() {
-   this.props.fetchTrades()
-   console.log("In App: ", this.props.trades, "Uniqu:", this.props.uniqStrategies)
+  
+   
+  
+  
+   // console.log("In App: ", this.props.trades, "Uniqu:", this.props.uniqStrategies)
     // fetch('http://localhost:3001/trades')
     // .then(response => response.json())
     // .then(astronauts => console.log(astronauts));
@@ -29,7 +45,7 @@ render() {
   
  
 
-}
+
 
 const mapStateToProps = state => {
   return {trades: state.trades,

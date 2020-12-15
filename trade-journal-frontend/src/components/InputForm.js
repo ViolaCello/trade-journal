@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { addTrade } from '../actions/addTrade'
 import { withRouter } from 'react-router-dom'
 
+
 class InputForm extends Component {
 
 state = {
@@ -35,7 +36,9 @@ handleChange = (event) => {
         notes:'',
         newStrategy:''
     })
-    this.props.history.push("/trades");
+     this.props.history.push("/trades");
+    
+
   }
 
     render(props) {

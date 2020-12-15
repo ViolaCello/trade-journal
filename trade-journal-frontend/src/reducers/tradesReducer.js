@@ -1,3 +1,5 @@
+// import tallyProfits from "../components/utils";
+
 export default function tradesReducer(state = { 
     trades: [],
     totalProfit: '',
@@ -9,6 +11,7 @@ export default function tradesReducer(state = {
        
         case "GET_TRADES":
           //  console.log("Doing Math", action.payload[0].profit)
+         // debugger
             let profitsArray = []
             action.payload.map(array => profitsArray.push(array.profit))
             const reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -23,7 +26,6 @@ export default function tradesReducer(state = {
              }
 
              case 'ADD_TRADE_SUCCESS':
-               console.log("In the ADD_TRADE_SUCCESS", action.payload)
               return {...state, trades: [...state.trades, action.payload]}
 
     default:

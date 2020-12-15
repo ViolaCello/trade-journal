@@ -4,6 +4,7 @@ import {Route, Switch} from 'react-router-dom'
 import Trades from './Trades'
 import TradeInput from './TradeInput'
 import Stats from './Stats'
+import Show from './Show'
 
 
 const Home = props => {
@@ -20,6 +21,8 @@ return (
       <Route exact path='/trades' component={Trades} />
 
       <Route path='/trades/stats' component={Stats}/>
+
+      <Route path='/trades/show' component={Show}/>
    
       </Switch>
       <h3>You're current total profit is: ${props.totalProfit}</h3>
