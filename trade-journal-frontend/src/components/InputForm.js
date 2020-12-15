@@ -27,7 +27,7 @@ handleChange = (event) => {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.addTrade(this.state)
+    this.props.addTrade(this.state, this.props.history)
     this.setState({
         ticker:'',
         strategy:'',
@@ -37,7 +37,7 @@ handleChange = (event) => {
         notes:'',
         newStrategy:''
     })
-     this.props.history.push("/trades");
+   //  this.props.history.push("/trades");
     
 
   }
