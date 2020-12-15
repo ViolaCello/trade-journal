@@ -59,7 +59,7 @@ handleChange = (event) => {
                 <label>Strategy: </label><br />
                 <select required name="strategy" value={this.state.strategy} onChange={this.handleChange} >
                 <option>--New Strategy--</option>
-                {this.props.uniqStrategies.map(strat => <option>{strat}</option>)}
+                {this.props.uniqStrategies.map(strat => <option key={strat}>{strat}</option>)}
                  </select><br /><br />
                 {(this.state.strategy==="--New Strategy--") ? 
                         <span>

@@ -10,7 +10,7 @@ class TradesController < ApplicationController
         trade.process_trade
         # byebug
         if trade.save
-          render json: trade
+          render json: trade, :except => [:created_at, :updated_at]
         else
           render json:{ errors: trade.errors.full_messages}
         end
