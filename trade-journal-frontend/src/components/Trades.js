@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import {Route, Link} from 'react-router-dom'  
+import Show from './Show'
 
 class Trades extends Component {
 
@@ -12,7 +14,11 @@ render () {
     <div>
     <h1 style={{padding: '10px'}}>Trades Page</h1>
   <ul>
-    {this.props.trades.map(trade => <li key={trade.id}> {trade.ticker} - {trade.strategy}</li>)}
+    {this.props.trades.map(trade =>
+     <li key={trade.id}>
+     
+     <Link to={`/trades/${trade.id}`}>{trade.ticker} - {trade.strategy}</Link>
+     </li>)}
    {console.log("Props: ", this.props.totalTrades)}
    </ul>
     </div>

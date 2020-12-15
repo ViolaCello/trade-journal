@@ -5,6 +5,7 @@ import Trades from './Trades'
 import TradeInput from './TradeInput'
 import Stats from './Stats'
 import Show from './Show'
+// import { connect } from 'react-redux'
 
 
 const Home = props => {
@@ -22,7 +23,7 @@ return (
 
       <Route path='/trades/stats' component={Stats}/>
 
-      <Route path='/trades/show' component={Show}/>
+      <Route path='/trades/:id' render={(routerProps) => <Show {...routerProps} trades={props.trades}/>}/>
    
       </Switch>
       <h3>You're current total profit is: ${props.totalProfit}</h3>
@@ -30,10 +31,14 @@ return (
     )}
 
 
+const MapStateToProps = state => {
+  return {
+    trades : state.trades
+  }
+}
 
 
-
-  
- export default Home
+  export default Home
+// export default connect(MapStateToProps)(Home)
 
 //{props.trades.map(trade => <span key={trade.id}> {trade.ticker} - {trade.strategy}</span>)}
