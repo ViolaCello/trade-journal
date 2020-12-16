@@ -1,14 +1,27 @@
+import React from 'react'
+import {connect} from 'react-redux'
+import {deleteTrade} from '../actions/deleteTrade' 
+ 
+ class Show extends React.Component {
+
+
+ handleDelete = (trade) => {
+    this.props.deleteTransaction(trade.id)
+  }
 
 
 
-const Show = (props) => {
+render() {
 
     // let t = parseInt(props.match.params.id)
-    let trade = props.trades.filter(data => data.id == props.match.params.id)[0]
+    let trade = this.props.trades.filter(data => data.id == this.props.match.params.id)[0]
 
  //  {console.log("Show Page", props)}
 
  
+
+
+
     return (
     <div>
     
@@ -25,6 +38,8 @@ const Show = (props) => {
 
     </div> 
     )
+}
+
 }
 
 export default Show
