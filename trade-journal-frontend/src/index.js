@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
@@ -11,7 +10,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 // import reportWebVitals from './reportWebVitals';
-let reducer = () => console.log("Hello World")
+// let reducer = () => console.log("Hello World")
 const store = createStore(
   tradesReducer, compose(applyMiddleware(thunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())

@@ -5,10 +5,6 @@ import Show from './Show'
 
 class Trades extends Component {
 
-   
-      
-
-
 render () { 
     return (
     <div>
