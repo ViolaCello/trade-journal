@@ -23,7 +23,7 @@ return (
 
       <Route path='/trades/stats' component={Stats}/>
 
-      <Route path='/trades/:id' render={(routerProps) => <Show {...routerProps} trades={props.trades}/>}/>
+      <Route exact path='/trades/:id' render={(routerProps) => <Show {...routerProps} trades={props.trades}/>}/>
    
       </Switch>
       <h3>You're current total profit is: ${props.totalProfit}</h3>

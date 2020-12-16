@@ -19,6 +19,7 @@ class TradesController < ApplicationController
       def destroy
         trade = Trade.find(params[:id])
         trade.destroy
+        render json: { message: params[:id] }
       end
 
       private

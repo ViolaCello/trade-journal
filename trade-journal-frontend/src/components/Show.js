@@ -1,12 +1,16 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {deleteTrade} from '../actions/deleteTrade' 
+import { withRouter } from 'react-router-dom'
  
  class Show extends React.Component {
 
+   
 
  handleDelete = (trade) => {
-    this.props.deleteTransaction(trade.id)
+   //  debugger
+    this.props.deleteTrade(trade.id, this.props.history)
+    this.props.history.push("/trades")
   }
 
 
@@ -15,6 +19,7 @@ render() {
 
     // let t = parseInt(props.match.params.id)
     let trade = this.props.trades.filter(data => data.id == this.props.match.params.id)[0]
+
 
  //  {console.log("Show Page", props)}
 
@@ -25,7 +30,7 @@ render() {
     return (
     <div>
     
-   <h2> Show Page - Trade #{trade.id} </h2>
+   <h2> Show Page - Trade # {trade.id} </h2>
    <p>Symbol: <span>{trade.ticker}</span></p>
    <p>Date: {trade.date}</p>
    <p>Strategy: {trade.strategy}</p>
@@ -33,7 +38,7 @@ render() {
    <p>Return on Risk: {trade.ror}</p>
    <p>Notes: {trade.notes}</p>  
 
-        <button className="delete">Delete</button>
+        <button className="delete" onClick={() => this.handleDelete(trade)}>Delete</button>
         <button>Edit</button>
 
     </div> 
@@ -42,4 +47,4 @@ render() {
 
 }
 
-export default Show
+export default withRouter(connect(null, { deleteTrade })(Show))

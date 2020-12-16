@@ -37,7 +37,7 @@ handleChange = (event) => {
 
     render(props) {
         console.log(this.props)
-debugger
+// debugger
         return (
             <div>
             {console.log("InputForm: ", this.props)}
