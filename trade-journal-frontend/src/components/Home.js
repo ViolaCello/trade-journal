@@ -5,7 +5,7 @@ import Trades from './Trades'
 import TradeInput from './TradeInput'
 import Stats from './Stats'
 import Show from './Show'
-// import { connect } from 'react-redux'
+import Market from './Market'
 
 
 const Home = props => {
@@ -15,7 +15,7 @@ return (
      
     <Navbar/>
     <h3>You're current total profit is: ${props.totalProfit}</h3>
-
+    <Market />
       <Switch>
     
 

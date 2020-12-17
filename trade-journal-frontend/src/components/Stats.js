@@ -1,19 +1,49 @@
-import { uniqStrategies,  profitPerStrat, uniqStocks, profitPerStock } from './Utilities'
+import React from 'react'
+import Strategy from './Strategy'
+import Stocks from './Stocks'
+
+class Stats extends React.Component {
+
+state = {
+    stat : true,
+    stok : false
+}
 
 
-const Stats = (props) => {
+toggle = () => {
+    console.log("Hi")
+   if (this.state.stat) {
+     return (
+   <div> <Strategy trades={this.props.trades} /> </div>
+      )
+   }
+       else {
+           return <div> <Stocks trades={this.props.trades} /> </div>
+       }
+   }
+
+   handleClick = (event) => {
+       console.log("handleClick:", event)
+       this.setState({
+           stat: false,
+           stok: true
+        }
+       )}
+   
+
+render() {
     return (
         <div>Stats Page
         
-        <h2>Profits Per Strategy</h2>
-        <h5>Strategy - Profit</h5>
-       <div> {uniqStrategies(props.trades).map(strats => <li key={strats}> {strats} - ${profitPerStrat(props.trades, strats)}</li>)}</div>
-    
-       <h2>Profits Per Stock</h2>
-        <h5>Stock - Profit</h5>
-       <div> {uniqStocks(props.trades).map(strats => <li key={strats}> {strats} - ${profitPerStock(props.trades, strats)}</li>)}</div>
+
+        <button name="stratButton" onClick={this.handleClick }>By Strategy</button>
+        <button name="stockButton" onClick={this.handleClick }>By Stock</button>
+   { this.toggle()}
+       
 
         </div>
     )}
     
+    }
+
     export default Stats
