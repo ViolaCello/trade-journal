@@ -1,8 +1,14 @@
-const Totals = () => {
+import { profitPerStock, sumProfits } from '../../components/Utilities'
+
+
+const Totals = props => {
     return (
-        <div></div>
+        <div>
+        Total Profit: ${sumProfits(props.trades)}
+
+        </div>
     )
-    console.log("TOTALS")
+   
 }
 
 export default Totals

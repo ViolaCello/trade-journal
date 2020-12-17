@@ -50,7 +50,7 @@ toggle = () => {
 render() {
     return (
         <div>Stats Page
-        <Totals />
+        <Totals trades={this.props.trades}/>
 
         <button name="stratButton" onClick={this.handleClick }>By Strategy</button>
         <button name="stockButton" onClick={this.handleClick }>By Stock</button>
