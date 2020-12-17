@@ -23,7 +23,7 @@ return (
 
       <Route exact path='/trades' component={Trades} />
 
-      <Route path='/trades/stats' render={(routerProps) => <Stats {...routerProps} trades={props.trades}/>}/>
+      <Route path='/trades/stats' render={() => <Stats  trades={props.trades}/>}/>
 
       <Route exact path='/trades/:id' render={(routerProps) => <Show {...routerProps} trades={props.trades}/>}/>
    

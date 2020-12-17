@@ -38,14 +38,15 @@
             return <div>Loading...</div>
         } else {
         let stockArray = []
-        data.map(array => stockArray.push(array.strategy))
+        data.map(array => stockArray.push(array.ticker))
              let answer = [...new Set(stockArray)]
+             console.log("ANSWER: ", data)
         return answer
         }
     }
 
     export function profitPerStock(data, stock) {
-        let array = data.filter(str => str.symbol===stock)
+        let array = data.filter(str => str.ticker===stock)
         let profit = sumProfits(array)
         return profit
     }

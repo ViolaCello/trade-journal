@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addTrade } from '../actions/addTrade'
-import { withRouter } from 'react-router-dom'
-
 
 
 class InputForm extends Component {
@@ -82,4 +80,4 @@ handleChange = (event) => {
 
 }
 
-export default withRouter(connect(null, { addTrade })(InputForm));
+export default connect(null, { addTrade })(InputForm);

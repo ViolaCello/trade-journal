@@ -1,5 +1,5 @@
-import { uniqStrategies } from './Utilities'
-import { profitPerStrat } from './Utilities'
+import { uniqStrategies,  profitPerStrat, uniqStocks, profitPerStock } from './Utilities'
+
 
 const Stats = (props) => {
     return (
@@ -11,6 +11,10 @@ const Stats = (props) => {
         <h5>Strategy - Profit</h5>
        <div> {uniqStrategies(props.trades).map(strats => <li key={strats}> {strats} - ${profitPerStrat(props.trades, strats)}</li>)}</div>
     
+       <h2>Profits Per Stock</h2>
+        <h5>Stock - Profit</h5>
+       <div> {uniqStocks(props.trades).map(strats => <li key={strats}> {strats} - ${profitPerStock(props.trades, strats)}</li>)}</div>
+
         </div>
     )}
     
