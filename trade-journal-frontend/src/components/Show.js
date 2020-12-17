@@ -33,9 +33,7 @@ render() {
     let trade = this.props.trades.filter(data => data.id == this.props.match.params.id)[0]
 
 
- //  {console.log("Show Page", props)}
-
- 
+  
 
 
 
@@ -46,7 +44,7 @@ render() {
    <p>Symbol: <span>{trade.ticker}</span></p>
    <p>Date: {trade.date}</p>
    <p>Strategy: {trade.strategy}</p>
-   <p>Profit/Loss: {trade.profit}</p>
+   <p>{(trade.result) ? <span className="profit">Profit ${trade.profit}</span>: <span className="loss">Loss ${trade.profit}</span>} </p>
    <p>Return on Risk: {trade.ror}</p>
    <p>Notes: {trade.notes}</p>  
 

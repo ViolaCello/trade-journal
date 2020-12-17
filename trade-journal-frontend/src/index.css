@@ -61,3 +61,11 @@ button {
   background-color: orangered;
  
 }
+
+.profit {
+  color: greenyellow;
+}
+
+.loss {
+  color: red;
+}
