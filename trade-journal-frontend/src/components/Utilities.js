@@ -50,3 +50,15 @@
         let profit = sumProfits(array)
         return profit
     }
+
+    export function sumROR(data) {
+        let rorArray = []
+    data.map(array => rorArray.push(array.ror)) 
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    return rorArray.reduce(reducer).toFixed(2)
+    }
+
+    export function wlPercent(data) {
+        let wl = data.filter(array => array.result===true)
+        return ((wl.length / data.length) * 100)
+    }
