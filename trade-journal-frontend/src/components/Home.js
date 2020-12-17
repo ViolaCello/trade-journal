@@ -14,6 +14,8 @@ return (
     <div>
      
     <Navbar/>
+    <h3>You're current total profit is: ${props.totalProfit}</h3>
+
       <Switch>
     
 
@@ -21,24 +23,21 @@ return (
 
       <Route exact path='/trades' component={Trades} />
 
-      <Route path='/trades/stats' component={Stats}/>
+      <Route path='/trades/stats' render={(routerProps) => <Stats {...routerProps} trades={props.trades}/>}/>
 
       <Route exact path='/trades/:id' render={(routerProps) => <Show {...routerProps} trades={props.trades}/>}/>
    
       </Switch>
-      <h3>You're current total profit is: ${props.totalProfit}</h3>
+   
     </div>
     )}
 
 
-// const mapStateToProps = state => {
-//   return {
-//     trades : state.trades
-//   }
-// }
-
+// 
 
   export default Home
 // export default connect(mapStateToProps)(Home)
 
 //{props.trades.map(trade => <span key={trade.id}> {trade.ticker} - {trade.strategy}</span>)}
+
+//   

@@ -4,7 +4,7 @@ import React from 'react'
 import fetchTrades from './actions/fetchTrades'
 import { connect } from 'react-redux'
 import Home from './components/Home'
-import { sumProfits } from './components/Utilities'
+ import { sumProfits } from './components/Utilities'
 
 
 
@@ -23,13 +23,14 @@ class App extends React.Component {
 
 render() {
 
-  console.log("In App, Sum Profits:", sumProfits(this.props.trades))
+ // console.log("In App, Sum Profits:", sumProfits(this.props.trades))
   console.log("In App, Props :", this.props.trades)
 
   return (
     <div>
-      <Home trades={this.props.trades} totalProfit={sumProfits(this.props.trades)} />
-     
+   
+   <Home trades={this.props.trades} totalProfit={sumProfits(this.props.trades)} />
+
     </div>
   );
 }
@@ -56,3 +57,5 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, { fetchTrades }) (App);
 
 //   {this.props.trades.map(trade => <span key={trade.id}> {trade.ticker} - {trade.strategy}</span>)}
+
+//    

@@ -58,7 +58,7 @@ button {
 
 .delete {
   
-  background-color: orangered;
+  background-color:red;
  
 }
 
@@ -67,5 +67,5 @@ button {
 }
 
 .loss {
-  color: red;
+  color: rgb(241, 44, 44);
 }
