@@ -15,7 +15,9 @@ return (
      
     <Navbar/>
     <h3>You're current total profit is: ${props.totalProfit}</h3>
+    <div width="20%" align="left" padding="100px">
     <Market />
+    </div>
       <Switch>
     
 
