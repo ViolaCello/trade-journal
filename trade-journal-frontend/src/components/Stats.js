@@ -1,6 +1,7 @@
 import React from 'react'
 import Strategy from './Strategy'
 import Stocks from './Stocks'
+import Totals from './StatsComponents/Totals'
 
 class Stats extends React.Component {
 
@@ -49,7 +50,7 @@ toggle = () => {
 render() {
     return (
         <div>Stats Page
-        
+        <Totals />
 
         <button name="stratButton" onClick={this.handleClick }>By Strategy</button>
         <button name="stockButton" onClick={this.handleClick }>By Stock</button>
