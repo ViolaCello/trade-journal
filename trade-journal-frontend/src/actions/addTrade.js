@@ -18,7 +18,7 @@ export const addTrade = (data, history) => {
           alert(trade.errors)
         } else {
           dispatch({type: 'ADD_TRADE_SUCCESS', payload: trade})
-          history.push("/trades")
+          history.push(`/trades/${trade.id}`)
         }
       }
     )
