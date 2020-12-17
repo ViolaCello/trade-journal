@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {Route, Link} from 'react-router-dom'  
-import Show from './Show'
 
 class Trades extends Component {
 
@@ -15,7 +14,6 @@ render () {
      
      <Link to={`/trades/${trade.id}`}>{trade.ticker} - {trade.strategy}</Link>
      </li>)}
-   {console.log("Props: ", this.props.totalTrades)}
    </ul>
     </div>
     )
@@ -27,7 +25,6 @@ render () {
 const mapStateToProps = state => {
     return {
         trades: state.trades,
-      totalTrades: state.totalTrades
     }
 }
 
