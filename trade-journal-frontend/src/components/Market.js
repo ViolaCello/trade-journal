@@ -1,26 +1,24 @@
 import React from 'react'
+import { polygonClient, restClient, websocketClient } from "polygon.io";
+const rest = restClient("HnmtxvRkKGbvQnr_dMdr14nhLxpfDGxT");
+
+let r = ""
 
 class Market extends React.Component {
 
+
+
 componentDidMount() {
-    fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=tesla&region=US", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "08507dcb2dmsh734c7c4378428e1p116926jsn2b0915eb021b",
-		"x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.error(err);
-});
+	
+ fetch('https://api.polygon.io/v2/aggs/ticker/SPY/range/1/day/2020-06-01/2020-06-17?apiKey=HnmtxvRkKGbvQnr_dMdr14nhLxpfDGxT')
+  .then(rep => rep.json())
+  .then(data => r = data)
 }
 
 render() {
     return (
-        <div></div>
+        <div>Data: {(r.length > 0) ? <span>{r.results[0].c}</span>  : null }
+		</div>
     )
 }
 
