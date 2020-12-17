@@ -28,7 +28,7 @@ render() {
 
   return (
     <div>
-      <Home trades={this.props.trades} totalTrades={this.props.totalTrades} totalProfit={sumProfits(this.props.trades)} />
+      <Home trades={this.props.trades} totalProfit={sumProfits(this.props.trades)} />
      
     </div>
   );
@@ -48,10 +48,8 @@ render() {
 
 
 const mapStateToProps = state => {
-  return {trades: state.trades,
-          totalTrades: state.totalTrades,
-          totalProfit: state.totalProfit,
-          uniqStrategies: state.uniqStrategies
+  return {
+          trades: state.trades,
         }
 }
 
