@@ -1,9 +1,9 @@
-export const editTradeAction = (tradeId, data, history) => {
+export const editTradeAction = (data, history) => {
     if (!!data.newStrategy) {
         data.strategy = data.newStrategy
     }
        return (dispatch) => {
-         return fetch(`http://localhost:3001/trades/${tradeId}`, {
+         return fetch(`http://localhost:3001/trades/${data.id}`, {
             method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -17,7 +17,7 @@ export const editTradeAction = (tradeId, data, history) => {
           alert(trade.errors)
         } else {
           dispatch({type: 'EDIT_TRADE', payload: trade})
-          history.push(`/trades/${tradeId}`)
+          history.push(`/trades/${trade.id}`)
         }
       }
     )

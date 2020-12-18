@@ -17,17 +17,28 @@ export default function tradesReducer(state = {
         case "GET_TRADES":
       
             return {...state, trades: action.payload,
-        
-             }
+                     }
 
              case 'ADD_TRADE_SUCCESS':
               return {...state, trades: [...state.trades, action.payload]
               }
+              
               case 'DELETE_TRADE':
                 console.log("DELETE_TRADE: ", action.payload)
                 return {
                   trades: state.trades.filter(trade => trade.id !== action.payload)
                 }
+
+                case 'EDIT_TRADE':
+                  let edited_trade = state.trades.map(trade => {
+                    if (trade.id === action.payload.id) {
+                      return action.payload
+                    } else {
+                      return trade
+                    }
+                  })
+
+
     default:
       return state;
     }
