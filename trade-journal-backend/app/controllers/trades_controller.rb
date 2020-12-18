@@ -16,6 +16,15 @@ class TradesController < ApplicationController
         end
       end
 
+      def update 
+        trade = Trade.find(params[:id])
+        if trade.update(trade_params)
+          render json: trade, :except => [:created_at, :updated_at]
+        else  
+          render json:{ errors: trade.errors.full_messages}
+        end
+      end
+
       def destroy
         trade = Trade.find(params[:id])
         trade.destroy
