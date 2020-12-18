@@ -6,7 +6,9 @@ import EditTrade from './EditTrade'
  
  class Show extends React.Component {
 
-   
+   state = {
+     edit: false
+   }
 
  handleDelete = (trade) => {
    //  debugger
@@ -14,8 +16,23 @@ import EditTrade from './EditTrade'
     this.props.history.push("/trades")
   }
 
-  handleEdit = (trade) => {
-    console.log("Edit Clicked", trade)
+editRender = (trade) => {
+  if (this.state.edit) {
+    return (
+      <div>  <EditTrade trade={trade} data={this.props.trades}/></div>
+         )
+  } else {
+    return null
+  }
+}
+
+  handleEdit = () => {
+    this.setState(
+     {
+        edit: true
+      }
+    )
+
    }
 
 render() {
@@ -42,7 +59,7 @@ render() {
         <button className="delete" onClick={() => this.handleDelete(trade)}>Delete</button>
         <button onClick={() => this.handleEdit(trade)}>Edit</button>
       <div className="edithere"></div>
-      <EditTrade trade={trade} data={this.props.trades}/>
+    { this.editRender(trade)}
     </div> 
     )
 }
