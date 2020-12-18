@@ -2,7 +2,7 @@ export const editTradeAction = (data, history) => {
     if (!!data.newStrategy) {
         data.strategy = data.newStrategy
     }
-  debugger
+  // debugger
        return (dispatch) => {
          return fetch(`http://localhost:3001/trades/${data.id}`, {
             method: 'PATCH',
