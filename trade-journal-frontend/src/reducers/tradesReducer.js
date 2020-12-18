@@ -23,7 +23,7 @@ export default function tradesReducer(state = {
 
               case 'DELETE_TRADE':
                 console.log("DELETE_TRADE: ", action.payload)
-                return {
+                return {...state, 
                   trades: state.trades.filter(trade => trade.id !== action.payload)
                 }
 
