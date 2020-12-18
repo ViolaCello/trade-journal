@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { editTradeAction} from '../actions/editTradeAction'
+import { uniqStrategies } from './Utilities'
 import { withRouter } from "react-router";
 
 
@@ -29,14 +30,10 @@ handleChange = (event) => {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.editTradeAction(this.state, this.props.history)
-    // no need to set the state back to blank because if there are errors I want to not have to re-fill the entire page again
-   //  this.props.history.push("/trades");  --> the redirect will happen in the addTrade function and trigger only if the database sends no errors
-    
-
   }
 
     render(props) {
-        console.log("This should be the ID: ", this.state.id)
+        console.log("Props: ", this.props)
             // debugger
         return (
             <div>
@@ -52,9 +49,17 @@ handleChange = (event) => {
                 <input type="date" name="date" value={this.state.date} onChange={this.handleChange} required/><br /><br />
 
 
-
-
-               
+                <label>Strategy: </label><br />
+                  <select required name="strategy" value={this.state.strategy} onChange={this.handleChange} >
+                  <option>--New Strategy--</option>
+                  {uniqStrategies(this.props.data).map(strat => <option key={strat}>{strat}</option>)}
+                  </select><br /><br />
+                  {(this.state.strategy==="--New Strategy--") ? 
+                          <span>
+                      <label>Enter New Strategy Name: </label>
+                      <input type="text" name="newStrategy" value={this.state.newStrategy} onChange={this.handleChange} required/><br /><br />
+                      </span>
+                  : null }
 
 
                 <label>Risk: </label><br />
@@ -83,14 +88,4 @@ export default withRouter(connect(null, { editTradeAction })(EditTrade));
 
 
 
-// <label>Strategy: </label><br />
-// <select required name="strategy" value={this.state.strategy} onChange={this.handleChange} >
-// <option>--New Strategy--</option>
-// {this.props.uniqStrategies.map(strat => <option key={strat}>{strat}</option>)}
-//  </select><br /><br />
-// {(this.state.strategy==="--New Strategy--") ? 
-//         <span>
-//     <label>Enter New Strategy Name: </label>
-//     <input type="text" name="newStrategy" value={this.state.newStrategy} onChange={this.handleChange} required/><br /><br />
-//     </span>
-// : null }
+

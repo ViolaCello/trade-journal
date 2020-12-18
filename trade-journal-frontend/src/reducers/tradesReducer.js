@@ -1,5 +1,3 @@
-// import tallyProfits from "../components/utils";
-
 export default function tradesReducer(state = { 
     trades: [],
     market: []
@@ -30,17 +28,10 @@ export default function tradesReducer(state = {
                 }
 
                 case 'EDIT_TRADE':
-                                    
-                //  let edited_trade = state.trades.filter(trade => trade.id !== action.payload.id)
-                //  debugger
                   return {
                     ...state, trades: [...state.trades.filter(trade => trade.id !==action.payload.id), action.payload]
                   }
-                //  return { ...state, 
-                //     trades: state.trades.filter(trade => trade.id !== action.payload.id),
-                //      action.payload
-                //  }
-
+             
     default:
       return state;
     }

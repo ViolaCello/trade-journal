@@ -3,7 +3,7 @@ import React from 'react'
 // const rest = restClient("HnmtxvRkKGbvQnr_dMdr14nhLxpfDGxT");
 import { connect } from 'react-redux'
 import  fetchMarketData  from '../actions/fetchMaretData'
-import { polygonClient, restClient, websocketClient } from "polygon.io";
+// import { polygonClient, restClient, websocketClient } from "polygon.io";
 
 
 

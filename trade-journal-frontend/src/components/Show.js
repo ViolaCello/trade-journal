@@ -42,7 +42,7 @@ render() {
         <button className="delete" onClick={() => this.handleDelete(trade)}>Delete</button>
         <button onClick={() => this.handleEdit(trade)}>Edit</button>
       <div className="edithere"></div>
-      <EditTrade trade={trade} />
+      <EditTrade trade={trade} data={this.props.trades}/>
     </div> 
     )
 }
