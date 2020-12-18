@@ -19,7 +19,7 @@ import EditTrade from './EditTrade'
 editRender = (trade) => {
   if (this.state.edit) {
     return (
-      <div>  <EditTrade trade={trade} data={this.props.trades}/></div>
+      <div>  <EditTrade trade={trade} data={this.props.trades} toggleEditOff={this.toggleEditOff}/></div>
          )
   } else {
     return null
@@ -33,6 +33,14 @@ editRender = (trade) => {
       }
     )
 
+   }
+
+   toggleEditOff = () => {
+     this.setState(
+       {
+         edit: false
+       }
+     )
    }
 
 render() {

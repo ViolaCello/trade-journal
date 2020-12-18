@@ -30,6 +30,7 @@ handleChange = (event) => {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.editTradeAction(this.state, this.props.history)
+    this.props.toggleEditOff()
   }
 
     render(props) {
