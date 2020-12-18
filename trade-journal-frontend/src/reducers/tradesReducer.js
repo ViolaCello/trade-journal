@@ -22,7 +22,7 @@ export default function tradesReducer(state = {
              case 'ADD_TRADE_SUCCESS':
               return {...state, trades: [...state.trades, action.payload]
               }
-              
+
               case 'DELETE_TRADE':
                 console.log("DELETE_TRADE: ", action.payload)
                 return {
@@ -30,14 +30,16 @@ export default function tradesReducer(state = {
                 }
 
                 case 'EDIT_TRADE':
-                  let edited_trade = state.trades.map(trade => {
-                    if (trade.id === action.payload.id) {
-                      return action.payload
-                    } else {
-                      return trade
-                    }
-                  })
-
+                                    
+                //  let edited_trade = state.trades.filter(trade => trade.id !== action.payload.id)
+                //  debugger
+                  return {
+                    ...state, trades: [...state.trades.filter(trade => trade.id !==action.payload.id), action.payload]
+                  }
+                //  return { ...state, 
+                //     trades: state.trades.filter(trade => trade.id !== action.payload.id),
+                //      action.payload
+                //  }
 
     default:
       return state;
