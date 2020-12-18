@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {deleteTrade} from '../actions/deleteTrade' 
 import { withRouter } from 'react-router-dom'
-import TradeInput from './TradeInput'
+import EditTrade from './EditTrade'
  
  class Show extends React.Component {
 
@@ -16,15 +16,6 @@ import TradeInput from './TradeInput'
 
   handleEdit = (trade) => {
     console.log("Edit Clicked", trade)
-    let tradeId = trade.id
-    let insert = `
-      <div>
-    <TradeInput tradeId={tradeId} />
-    </div>
-    `
-    let findSpot = document.querySelector('.edithere')
-   
-    
    }
 
 render() {
@@ -51,6 +42,7 @@ render() {
         <button className="delete" onClick={() => this.handleDelete(trade)}>Delete</button>
         <button onClick={() => this.handleEdit(trade)}>Edit</button>
       <div className="edithere"></div>
+      <EditTrade trade={trade} />
     </div> 
     )
 }

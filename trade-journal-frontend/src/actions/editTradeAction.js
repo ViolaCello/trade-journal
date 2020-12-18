@@ -2,9 +2,10 @@ export const editTradeAction = (data, history) => {
     if (!!data.newStrategy) {
         data.strategy = data.newStrategy
     }
+  debugger
        return (dispatch) => {
          return fetch(`http://localhost:3001/trades/${data.id}`, {
-            method: 'POST',
+            method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -17,7 +18,7 @@ export const editTradeAction = (data, history) => {
           alert(trade.errors)
         } else {
           dispatch({type: 'EDIT_TRADE', payload: trade})
-          history.push(`/trades/${trade.id}`)
+          history.push(`/trades/${data.id}`)
         }
       }
     )
