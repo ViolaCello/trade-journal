@@ -3,7 +3,7 @@
   export function sumProfits(data) {
      console.log("We are in Utilities:", data)
      if (data.length===0) {
-         return <div>Loading...</div>
+         return []
      } else {
      let profitsArray = []
     data.map(array => profitsArray.push(array.profit))
@@ -13,9 +13,8 @@
 }
 
     export function uniqStrategies(data) {
-        console.log("We are in Utilities, uniqStrategies:", data)
         if (data.length===0) {
-            return <div>Loading...</div>
+            return ["--New Strategy--"]
         } else {
         let strategyArray = []
         data.map(array => strategyArray.push(array.strategy))
@@ -35,7 +34,7 @@
 
     export function uniqStocks(data) {
         if (data.length===0) {
-            return <div>Loading...</div>
+            return []
         } else {
         let stockArray = []
         data.map(array => stockArray.push(array.ticker))
@@ -51,12 +50,14 @@
         return profit
     }
 
-    export function sumROR(data) {
+    export function sumROR(data) {  if (data.length===0) {
+        return <div>No trades entered yet...</div>
+    } else {
         let rorArray = []
     data.map(array => rorArray.push(array.ror)) 
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     return rorArray.reduce(reducer).toFixed(2)
-    }
+    }}
 
     export function wlPercent(data) {
         let wl = data.filter(array => array.result===true)
