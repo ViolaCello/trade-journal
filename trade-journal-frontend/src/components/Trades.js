@@ -7,7 +7,7 @@ class Trades extends Component {
 render () { 
     return (
     <div>
-    <h1 style={{padding: '10px'}}>Trades Page</h1>
+    <h1 style={{padding: '10px'}}>Trades</h1>
   <ul>
     {this.props.trades.map(trade =>
      <li key={trade.id}>

@@ -36,9 +36,15 @@ componentDidMount() {
 render() {
 
     return (
+		<div>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
         <div>S&P 500: $ {this.props.market.results ? <span>{this.props.market.results[this.props.market.results.length - 1].c}</span> : null}
 		
-		
+		</div>
 		</div>
     )
 }
