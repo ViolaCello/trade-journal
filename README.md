@@ -1,10 +1,19 @@
 Trade Journal 
 React/Redux
 
+
 - fork and clone the repository
 - npm install redux 
 - npm install react-redux
 - npm install react-router-dom
+- open two (2) terminal instances
+- in one of the terminals, type:
+    cd trade-journal-backend
+    rails s -p 3001
+- in the other terminal, type:
+    cd trade-journal-frontend
+    npm start
+- in your Chrome browser, open localhost:3000
 
 A journal is a must-have for when undertaking any serious endeavor.  Among the journals I personally keep, my notebook for the FlatIron Software Engineering program is a living journal of my progress through the world of coding.  When I first walked through the doors of a professional securities trading jobs, the first thing we learned on the first day of trading was how to keep a trade journal.  I personally was never satisfied with any of the electronic journals for logging trades that were available.  Therefore, when my final project at FlatIron came around, I felt had the skills to develop the trade journal that I’ve always wanted.  
 
