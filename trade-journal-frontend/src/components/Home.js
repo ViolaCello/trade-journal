@@ -5,7 +5,7 @@ import Trades from './Trades'
 import TradeInput from './TradeInput'
 import Stats from './Stats'
 import Show from './Show'
-import Market from './Market'
+import MarketData from './MarketData'
 import Welcome from './Welcome'
 
 
@@ -15,7 +15,7 @@ return (
     <div>
 
     <div className="market"  >
-    <Market />
+    <MarketData />
     </div>
     <div className="welcome">
     <Navbar/>

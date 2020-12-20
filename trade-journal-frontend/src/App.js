@@ -24,7 +24,7 @@ class App extends React.Component {
 render() {
   return (
     <div>
-   
+
    <Home trades={this.props.trades} totalProfit={sumProfits(this.props.trades)} />
 
     </div>
