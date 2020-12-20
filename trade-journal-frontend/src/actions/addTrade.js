@@ -13,7 +13,6 @@ export const addTrade = (data, history) => {
     })
     .then(response => response.json())
     .then(trade => {
-      // debugger
         if (trade.errors) {
           alert(trade.errors)
         } else {

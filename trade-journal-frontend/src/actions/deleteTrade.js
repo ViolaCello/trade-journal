@@ -1,5 +1,5 @@
 export const deleteTrade = (tradeId, history) => {
- // debugger
+ 
     return (dispatch) => {
       return fetch(`http://localhost:3001/trades/${tradeId}`, {
         method: "DELETE",
@@ -14,6 +14,3 @@ export const deleteTrade = (tradeId, history) => {
     }
   }
 
-  //  
-
-  // .then(trade => console.log("In Delete_Trade: ", trade))

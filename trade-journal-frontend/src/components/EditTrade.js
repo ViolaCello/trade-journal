@@ -34,12 +34,11 @@ handleChange = (event) => {
   }
 
     render(props) {
-        console.log("Props: ", this.props)
-            // debugger
+      
         return (
             <div>
-            {console.log("InputForm: ", this.props.history)}
-                <h1> Input Form</h1>
+       
+                <h1> Edit Trade Form</h1>
                 <form onSubmit={this.handleSubmit}>
 
                 <label>Ticker Symbol: </label><br />

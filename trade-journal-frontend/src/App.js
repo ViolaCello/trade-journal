@@ -22,10 +22,6 @@ class App extends React.Component {
  
 
 render() {
-
- // console.log("In App, Sum Profits:", sumProfits(this.props.trades))
-  console.log("In App, Props :", this.props.trades)
-
   return (
     <div>
    

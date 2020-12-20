@@ -49,7 +49,7 @@ toggle = () => {
 
 render() {
     return (
-        <div>Stats Page
+        <div>Statistics 
         <Totals trades={this.props.trades}/>
 
         <button name="stratButton" onClick={this.handleClick }>By Strategy</button>

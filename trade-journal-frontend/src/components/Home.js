@@ -13,9 +13,7 @@ const Home = props => {
    
 return (
     <div>
-     
-   
-    
+
     <div className="market"  >
     <Market />
     </div>
@@ -23,13 +21,8 @@ return (
     <Navbar/>
     <h3>You're current total profit is: ${props.totalProfit}</h3>
    
-
-
       <Switch>
       
-
-
-
       <Route path='/trades/new' component={TradeInput}/>
 
       <Route exact path='/trades' component={Trades} />
@@ -43,12 +36,4 @@ return (
     </div>
     )}
 
-
-// 
-
   export default Home
-// export default connect(mapStateToProps)(Home)
-
-//{props.trades.map(trade => <span key={trade.id}> {trade.ticker} - {trade.strategy}</span>)}
-
-//   

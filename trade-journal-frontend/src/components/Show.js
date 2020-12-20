@@ -11,7 +11,7 @@ import EditTrade from './EditTrade'
    }
 
  handleDelete = (trade) => {
-   //  debugger
+
     this.props.deleteTrade(trade.id, this.props.history)
     this.props.history.push("/trades")
   }
@@ -56,11 +56,11 @@ render() {
     return (
     <div>
     
-   <h2> Show Page - Trade # {trade.id} </h2>
+   {/* {<h2> Show Page - Trade # {trade.id} </h2>} */}
    <p>Symbol: <span>{trade.ticker}</span></p>
    <p>Date: {trade.date}</p>
    <p>Strategy: {trade.strategy}</p>
-   <p>{(trade.result) ? <span className="profit">Profit ${trade.profit}</span>: <span className="loss">Loss ${trade.profit}</span>} </p>
+   <p>{(trade.result) ? <span className="profit">Profit ${trade.profit}</span> : <span className="loss">Loss ${trade.profit}</span>} </p>
    <p>Return on Risk: {trade.ror}</p>
    <p>Notes: {trade.notes}</p>  
 

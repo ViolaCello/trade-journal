@@ -11,7 +11,7 @@
                 Security Ticker Symbol<br />
                 Date of Trade <br />
                 Strategy user for this trade *** <br />This is most important, as the way to learn to trade is to document what you're doing to make a profit.<br /><br />
-                You can choose a strategy that you have perviously used from the dropdown menu, or you click "New Strategy" and enter a new strategy.  </p>
+                You can choose a strategy that you have previously used from the dropdown menu, or you click "New Strategy" and enter a new strategy.  </p>
                <p>Also enter the amount of profit or loss (enter losses with a negative number) from the trade outcome.</p> 
            
             <p>After some trade data is enter, click <b>Stats</b> to see your overall statistics, as well as profit broken down by Stock and Strategy</p>
