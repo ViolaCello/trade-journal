@@ -20,6 +20,7 @@ class TradesController < ApplicationController
         trade = Trade.find(params[:id])
         if trade.update(trade_params)
           trade.process_trade
+     trade.save
           render json: trade, :except => [:created_at, :updated_at]
         else  
           render json:{ errors: trade.errors.full_messages}

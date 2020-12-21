@@ -14,5 +14,4 @@ class Trade < ApplicationRecord
       
     end
 
-
 end
