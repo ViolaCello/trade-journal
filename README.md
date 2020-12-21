@@ -6,6 +6,7 @@ React/Redux
 - npm install redux 
 - npm install react-redux
 - npm install react-router-dom
+- npm install redux-thunk
 - open two (2) terminal instances
 - in one of the terminals, type:
     cd trade-journal-backend
