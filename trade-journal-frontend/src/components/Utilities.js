@@ -1,7 +1,6 @@
 
 
   export function sumProfits(data) {
-     console.log("We are in Utilities:", data)
      if (data.length===0) {
          return []
      } else {
@@ -24,7 +23,6 @@
     }
 
     export function profitPerStrat(data, strat) {
-        console.log("Data & Strat", data, strat)
         let array = data.filter(str => str.strategy===strat)
         let profit = sumProfits(array)
         console.log("SumProfits: ", profit)
@@ -61,5 +59,5 @@
 
     export function wlPercent(data) {
         let wl = data.filter(array => array.result===true)
-        return ((wl.length / data.length) * 100)
+        return ((wl.length / data.length) * 100).toFixed(2)
     }
